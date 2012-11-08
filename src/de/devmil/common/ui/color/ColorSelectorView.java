@@ -92,40 +92,40 @@ public class ColorSelectorView extends LinearLayout {
 						setColor(color);
 					}
 				});
-		rgbSelector = new RgbSelectorView(getContext());
-		rgbSelector.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
-				LayoutParams.FILL_PARENT));
-		rgbSelector
-				.setOnColorChangedListener(new RgbSelectorView.OnColorChangedListener() {
-					@Override
-					public void colorChanged(int color) {
-						setColor(color);
-					}
-				});
-		hexSelector = new HexSelectorView(getContext());
-		hexSelector.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
-				LayoutParams.FILL_PARENT));
-		hexSelector
-				.setOnColorChangedListener(new HexSelectorView.OnColorChangedListener() {
-					@Override
-					public void colorChanged(int color) {
-						setColor(color);
-					}
-				});
+//		rgbSelector = new RgbSelectorView(getContext());
+//		rgbSelector.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
+//				LayoutParams.FILL_PARENT));
+//		rgbSelector
+//				.setOnColorChangedListener(new RgbSelectorView.OnColorChangedListener() {
+//					@Override
+//					public void colorChanged(int color) {
+//						setColor(color);
+//					}
+//				});
+//		hexSelector = new HexSelectorView(getContext());
+//		hexSelector.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
+//				LayoutParams.FILL_PARENT));
+//		hexSelector
+//				.setOnColorChangedListener(new HexSelectorView.OnColorChangedListener() {
+//					@Override
+//					public void colorChanged(int color) {
+//						setColor(color);
+//					}
+//				});
 
 		tabs = (TabHost) contentView
 				.findViewById(R.id.colorview_tabColors);
 		tabs.setup();
 		ColorTabContentFactory factory = new ColorTabContentFactory();
-		TabSpec hsvTab = tabs.newTabSpec(HSV_TAG).setIndicator("HSV", getContext().getResources().getDrawable(R.drawable.hsv32))
+		TabSpec hsvTab = tabs.newTabSpec(HSV_TAG).setIndicator("Color", getContext().getResources().getDrawable(R.drawable.hsv32))
 				.setContent(factory);
-		TabSpec rgbTab = tabs.newTabSpec(RGB_TAG).setIndicator("RGB", getContext().getResources().getDrawable(R.drawable.rgb32))
-				.setContent(factory);
-		TabSpec hexTab = tabs.newTabSpec(HEX_TAG).setIndicator("HEX", getContext().getResources().getDrawable(R.drawable.hex32))
-				.setContent(factory);
+//		TabSpec rgbTab = tabs.newTabSpec(RGB_TAG).setIndicator("RGB", getContext().getResources().getDrawable(R.drawable.rgb32))
+//				.setContent(factory);
+//		TabSpec hexTab = tabs.newTabSpec(HEX_TAG).setIndicator("HEX", getContext().getResources().getDrawable(R.drawable.hex32))
+//				.setContent(factory);
 		tabs.addTab(hsvTab);
-		tabs.addTab(rgbTab);
-		tabs.addTab(hexTab);
+//		tabs.addTab(rgbTab);
+//		tabs.addTab(hexTab);
 	}
 
 	class ColorTabContentFactory implements TabContentFactory {
